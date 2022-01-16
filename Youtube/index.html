@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device-width">
+    <title>Youtube Premium</title>
+    <link rel="icon" type="image/svg" href="youtube.svg" />
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Mochiy+Pop+One&family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+
+    
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .siatka{
+            display: grid;
+            height: 100vh;
+            grid-template-columns:300px 1fr 200px;
+            grid-template-rows:48px  1fr;
+        }
+        .filmy{
+            grid-column: span 2;
+        }
+        .logo{
+            padding: 10px;
+        }
+        .pole_do_szukania{
+            background-color: rgb(248,248,240);
+            color: rgb(128,128,128);
+            width: 1000px;
+            height: 18px;
+            padding: 5px;
+            border: 2px solid gray;
+
+        }
+
+        .przycisk:hover{
+            background-color: rgb(240,240,240);
+        }
+        .przycisk{
+            padding: 10px;
+            height: 18px;
+        }
+        .przycisk img{
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+        .boczny_pasek h4{
+            padding-left: 10px;
+            color: grey;
+            font-family: Gluten;
+
+        }
+        .filmy{
+            display: flex;
+            flex-wrap: wrap;
+      
+            overflow-y: scroll;
+
+        }
+        .film{
+            flex-basis: 300px;
+            margin:0 8px;
+            
+        }
+        .film img{
+            width: 100%;
+        }
+        .film h4{
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .dodatkowe_informacje{
+
+            font-size: 12px;
+            font-family: Gluten;
+        }
+        .boczny_pasek{
+            overflow-y: scroll;
+        }
+        .funkcje{
+            display: flex;
+            padding: 12px;
+            justify-content: flex-end;
+        }
+        .funkcje img{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        .zaloguj{
+            font-size: 12px;
+            color: rgb(0,110,220);
+        }   
+        .przycisk-górny{
+            margin-right: 8px;
+            cursor: pointer;
+        }
+        .dodatkowe{
+            margin-left: 10px;
+            font-family: Gluten;
+        }
+
+        .orange{
+            background-color: grey;
+        }
+
+        .l{
+            color: white;
+            background-color: white;
+        }
+
+        .nick_uzytkownika{
+            font-family: Mochiy Pop One;
+        }
+
+        .niczek{
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+       
+       
+
+    </style>
+</head>
+
+<body>
+    <div class="siatka">
+        <div class="logo">
+            <img src="logo.png" width="150">
+        </div>
+
+        <div class="wyszukiwarka">
+            <input class="pole_do_szukania" value="Szukaj...">
+            <button class="orange">Wyszukaj</button>
+        </div>
+        
+        <div class="funkcje">
+            <div class="przycisk-górny">
+                <img src="more.png"/>
+            </div>
+            <div class="przycisk-górny">
+                <img src="apps.png"/>
+            </div>
+            <div class="przycisk-górny">
+                <img src="zaloguj.png"/>
+            </div>
+            
+        </div>
+
+        <div class="boczny_pasek">
+            <div class="przycisk">
+                <img src="home.png"/> 
+            Główna</div>
+            <div class="przycisk">
+                <img src="czas.png"/> 
+            Na czasie</div>
+            <div class="przycisk">
+                <img src="history.png"/>
+            Historia</div>
+            <h4>Kategorie</h4>
+            <div class="przycisk">
+                <img src="music.png"/>
+
+            Muzyka</div>
+            <div class="przycisk">
+                <img src="sport.png"/>
+            Sport</div>
+            <div class="przycisk">
+                <img src="sam.png">
+            Samoloty</div>
+            <div class="przycisk">
+                <img src="festivale.png">
+            Festiwale</div>
+            <div class="przycisk">
+                <img src="zd.png">
+            Zdjęcia</div>
+            <div class="przycisk">
+                <img src="sam.png">
+            Samoloty</div>
+            <div class="przycisk">
+                <img src="festivale.png">
+            Festiwale</div>
+            <div class="przycisk">
+                <img src="zd.png">
+            Zdjęcia</div>
+            <div class="przycisk">
+                <img src="sam.png">
+            Samoloty</div>
+            <div class="przycisk">
+                <img src="festivale.png">
+            Festiwale</div>
+            <div class="przycisk">
+                <img src="zd.png">
+            Zdjęcia</div>
+            <div class="przycisk">
+                <img src="sam.png">
+            Samoloty</div>
+            <div class="przycisk">
+                <img src="festivale.png">
+            Festiwale</div>
+            <div class="przycisk">
+                <img src="zd.png">
+            Zdjęcia</div>
+            <div class="przycisk">
+                <img src="sam.png">
+            Samoloty</div>
+            <div class="przycisk">
+                <img src="festivale.png">
+            Festiwale</div>
+            <div class="przycisk">
+                <img src="zd.png">
+            Zdjęcia</div>
+            <div class="przycisk">
+                <img src="sam.png">
+            Samoloty</div>
+            <div class="przycisk">
+                <img src="festivale.png">
+            Festiwale</div>
+            <div class="przycisk">
+                <img src="zd.png">
+            Zdjęcia</div>
+            <div class="przycisk">
+                <img src="sam.png">
+            Samoloty</div>
+            <div class="przycisk">
+                <img src="festivale.png">
+            Festiwale</div>
+            <div class="przycisk">
+                <img src="zd.png">
+            Zdjęcia</div>
+            <div class="dodatkowe">
+                <h2>
+                    Dodatkowe opcje
+                </h2>
+            </div>
+            <div class="przycisk">
+                <img src="mini.jpg">
+                <a href="fabryka.html" id="element">Fabryka wizytówek</a>
+            </div>
+            <div class="przycisk">
+                <img src="ikonka.jpeg">
+                <a href="autor.html" id="element">Autor</a>
+            </div>
+            <div class="przycisk">
+                <img src="not.png">
+                <a href="notatnik.html" id="element">Notatnik</a>
+            </div>
+            <div class="przycisk">
+                <img src="wer.png">
+            Zwerfikowano</div>
+            <div class="dodatkowe">
+                <h2>
+                   Nasze Gry
+                </h2>
+                <div class="przycisk">
+                    <img src="mini.jpg">
+                    <a href="memory.html
+                    " id="element">Memory</a>
+                </div>
+                <div>
+                    <img src="">
+                </div>
+                <div class="niczek">
+                   Nick użytkownika: 
+                </div>
+            </div>
+            
+        </div>
+
+        
+
+    
+        <div class="filmy">
+            <h2>Wyszukiwane hasła: </h2>
+            <ul>
+                <li>jawor</li>
+                <li>lego</li>
+                <li>minecraft</li>
+            </ul>
+            <div class="film">
+                <img src="f32.jpg">
+                <h4>
+
+                    <a href="yo.html">Tytuł filmu</a>
+                    
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    griffpatch 2 miesiące temu
+                </div>
+            </div>
+            <div class="film">
+                <img src="f4.webp">
+                <h4>
+
+                    <a href="yo2.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Żelazny 10 miesięcy temu
+                </div>
+            
+            </div>
+            <div class="film",class="dupa">
+                <img src="kuba5.jpg">
+                <h4>
+
+                    <a href="yo4.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Jawor 3 miesięcy temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="webik.webp">
+                <h4>
+
+                    <a href="yo5.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    LEGOmanka  3 tygodnie temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="kuba6.jpg">
+                <h4>
+
+                    <a href="yo6.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Żelazny  1 tydzień temu
+                </div>
+                
+            </div>
+            <div class="film",class="dupa">
+                <img src="kuba60.jpg">
+                <h4>
+
+                    <a href="yo8.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Żelazny  1 rok temu
+                </div>
+                
+            </div>
+            <div class="film",class="dupa">
+                <img src="kuba70.jpg">
+                <h4>
+
+                    <a href="yo9.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Vito minecraft  2 lata temu
+                </div>
+                
+            </div>
+            <div class="film",class="dupa">
+                <img src="kuba100.jpg">
+                <h4>
+
+                    <a href="yo10.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Jawor  1 miesiąc temu
+                </div>
+                
+            </div>
+            <div class="film",class="dupa">
+                <img src="kuba200.jpg">
+                <h4>
+
+                    <a href="yo11.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Wojan  1 miesiąc temu
+                </div>
+                
+            </div>
+            <div class="film",class="dupa">
+                <img src="lego.jpg">
+                <h4>
+
+                    <a href="yo12.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SmallBigThePlayer  7 miesięcy temu
+                </div>
+                
+            </div>
+            <div class="film",class="dupa">
+                <img src="kuba3.jpg">
+                <h4>
+
+                    <a href="yo7.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Jawor  2 tygodnie temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="lego2.jpg">
+                <h4>
+
+                    <a href="yo13.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SmallBigThePlayer  8 miesięcy temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="miasto.jpg">
+                <h4>
+
+                    <a href="yo14.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Żelazny  1 rok temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="kfc.jpg">
+                <h4>
+
+                    <a href="yo15.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Żelazny  1 rok temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="baza.jpg">
+                <h4>
+
+                    <a href="yo16.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Żelazny  1 miesiąc temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="lego20.jpg">
+                <h4>
+
+                    <a href="yo17.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SmallBigThePlayer 1 miesiąc temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="lego70.jpg">
+                <h4>
+
+                    <a href="yo18.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SmallBigThePlayer 1 miesiąc temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="legos.jpg">
+                <h4>
+
+                    <a href="yo19.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SmallBigThePlayer 1 miesiąc temu
+                </div>
+            </div>
+            
+            <div class="film",class="dupa">
+                <img src="marvel.jpg">
+                <h4>
+
+                    <a href="yo20.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SmallBigThePlayer 2 miesiące temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="legocity.jpg">
+                <h4>
+
+                    <a href="yo21.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SargeThePlayer 1 miesiąc temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="marlev2.jpg">
+                <h4>
+
+                    <a href="yo22.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    BennJ 1 miesiąc temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="lego600.jpg">
+                <h4>
+
+                    <a href="yo23.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SargeThePlayer 1 miesiąc temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="legosek.jpg">
+                <h4>
+
+                    <a href="yo24.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SargeThePlayer 2 miesiące temu
+                </div>
+            </div>
+            <div class="film",class="dupa">
+                <img src="lego8.jpg">
+                <h4>
+
+                    <a href="yo25.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SargeThePlayer 3 miesiące temu
+                </div>
+            
+            </div>
+            <div class="film",class="dupa">
+                <img src="marvelik.jpg">
+                <h4>
+
+                    <a href="yo26.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    SargeThePlayer 3 miesiące temu
+                </div>
+            
+            </div>
+           
+            <div class="film">
+                <img src="h11.webp">
+                <h4>
+
+                    <a href="yo3.html">Tytuł filmu</a>
+
+                </h4>
+                <div class="dodatkowe_informacje">
+                    Sitrox 9 miesięcy temu
+                </div>
+
+                
+                <div class="l">
+                    blie
+                </div>
+                
+                
+                
+            
+                
+
+            </div>
+        </div>
+
+       
+
+    </div>
+
+    <div>
+    
+       
+    </div>
+
+    <script src="kuba.js"></script>
+
+
+</body>
+
+
+
+</html>

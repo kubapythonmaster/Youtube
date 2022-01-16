@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <title>Fabryka wizytówek</title>
+    <link rel="icon" type="image/jpg" href="mini.jpg" />
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Rubik+Beastly&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@500&display=swap" rel="stylesheet">
+
+
+</head>
+
+<style>
+
+    h2{
+        font-family: Gluten;
+        background-color: lightblue;
+    }
+    body{
+        background-color: lightblue;
+    }
+    .formularz{
+        display: grid;
+        grid-template-columns: auto auto auto auto 1fr;
+        column-gap: 15px;
+        margin-bottom: 32px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid grey;
+    }
+    .personalnia{
+        font-size: 27px;
+        border-bottom: 1px solid grey;
+        margin-bottom: 10px;
+    }
+    .telefon{
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .adres{
+        margin-bottom: 30px;
+    }
+    .wizytówka{
+        height: 200px;
+        width: 300px;
+        border: 1px solid #cccc;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 Spx 9px 0 rgb(0,0,0,0.5);
+        border:2px solid #000;
+        padding-bottom: 20px;
+        grid-template-columns: auto;
+        border: 1px solid #cccc;
+        
+        
+    }
+    
+    .wizyt{
+        height: 200px;
+        width: 300px;
+        border: 1px solid #cccc;
+        padding: 20px;
+        background-color: white;
+        border:2px solid #000;
+        padding-bottom: 20px;
+        box-shadow: 0 Spx 9px 0 rgb(0,0,0,0.5);
+        
+        
+    }
+    .szablon_stanowany{
+        background-image: linear-gradient(to bottom, #fff, #eee);
+        height: 200px;
+        width: 300px;
+        border:2px solid #000;
+        width: 300px;
+        border: 1px solid #cccc;
+        padding: 20px;
+        background-color: white;
+        border:2px solid #000;
+        padding-bottom: 20px;
+    }
+    .szablon_wesoły{
+        background-image: linear-gradient(to top,yellow,orangered);
+        color: black;
+        height: 200px;
+        width: 300px;
+        border:2px solid #000;
+        height: 200px;
+        width: 300px;
+        border: 1px solid #cccc;
+        padding: 20px;
+        background-color: white;
+        border:2px solid #000;
+        padding-bottom: 20px;
+
+    }
+    .szablon_wesoły .personalnia{
+        border-bottom: 3px solid red;
+       
+    }
+
+    .szablon_odwrócony{
+        background-image: linear-gradient(to top,#333,#555);
+        color: white;
+        height: 200px;
+        width: 300px;
+        border:2px solid #000;
+        height: 200px;
+        width: 300px;
+        border: 1px solid #cccc;
+        padding: 20px;
+        background-color: white;
+        border:2px solid #000;
+        padding-bottom: 20px;
+    }
+
+    .szablon_buldogowy{
+        background-image: url("buldog2.jpg");
+        color: red;
+        font-size: 25px;
+        height: 300px;
+        width: 400px;
+        font-family: Roboto Slab;
+        border:2px solid #000;
+        box-shadow: 0 Spx 9px 0 rgb(0,0,0,0.5);
+        height: 200px;
+        width: 300px;
+        border: 1px solid #cccc;
+        padding: 20px;
+        background-color: white;
+        border:2px solid #000;
+        padding-bottom: 20px;
+        
+    }
+
+    .imię{
+        font-family: Gluten;
+    }
+    .adres{
+        font-family: Gluten;
+    }
+    .telefon{
+        font-family: Gluten;
+        text-align: down;
+    }
+    
+
+    .tekst{
+        font-family: Gluten;
+    }
+
+    .szablon_kwiatkowy{
+        height: 200px;
+        width: 300px;
+        border: 1px solid #cccc;
+        padding: 20px;
+        background-color: white;
+        border:2px solid #000;
+        padding-bottom: 20px;
+        background-color: yellow;
+
+    }
+
+    .szblon{
+        font-family: Gluten;
+    }
+
+    .dodaj{
+        background-color: yellow;
+        padding: 5px;
+    }
+
+    
+
+</style>
+
+
+
+<body>
+  <h2>
+      Fabryka wizytówek
+  </h2>
+  <div class="formularz">
+      <div class="imię">Imię i nazwisko: <input id="personalnia"></div>
+      <div class="adres">Adres: <input id="adres"></div>
+      <div class="telefon">Telefon: <input id="telefon"></div>
+      <div class="tekst">Tekst: <input id="tekst"></div>
+
+      <div class="szblon">Szablon: 
+        <select id="szablon">
+            <option value="">Brak</option>
+            <option value="szablon_stanowany">Stanowany</option>
+            <option value="szablon_wesoły">Wesoły</option>
+            <option value="szablon_odwrócony">Odwrócony</option>
+            <option value="szablon_buldogowy">buldogowy</option>
+            <option value="szablon_kwiatkowy">Kwiatkowy</option>
+        </select> 
+        
+        <button class="dodaj">Dodaj!</button>
+
+
+        
+
+        
+    
+      </div>
+
+     
+
+  </div>
+
+  <div class="lista_wizytówek">
+
+    <div class="wizytówka">
+        <div class="personalnia">
+            Janek Kowalski
+        </div>
+        <div class="tekst">
+            Witajcie jestem Kuba i lubie programować
+        </div>
+        <div class="adres">
+            ul. Wrzosowa 4
+        </div>
+    
+        
+        
+        <div class="telefon">
+            +48 670 567 345
+        </div>
+    </div>
+
+    
+    
+    
+    
+  </div>
+
+  <div style="text-align:right;position:fixed;bottom:3px;right:3px;width:100%;z-index:999999;cursor:pointer;line-height:0;display:block;"><a target="_blank" href="https://www.freewebhostingarea.com" title="Free Web Hosting with PHP5 or PHP7"><img alt="by.png" src="https://www.freewebhostingarea.com/images/poweredby.png" style="border-width: 0px;width: 180px; height: 45px; float: right;"></a></div>
+
+  
+
+  <script src="script.js"></script>
+</body>
+
+
+</html>
